@@ -101,7 +101,7 @@ window.addEventListener('DOMContentLoaded', function() {
 // 2순위 대안: PROXY_ENDPOINT가 비어있을 경우, 깃허브 스캐닝 봇이 감지하지 못하도록
 //            분할 Base64 인코딩된 웹후크를 런타임에 복원하여 전송합니다.
 // =========================================================================
-const PROXY_ENDPOINT = ""; // 예: "https://honorsville-webhook.본인계정.workers.dev"
+const PROXY_ENDPOINT = "[https://honorsville-webhook.mohann1006.workers.dev](https://honorsville-webhook.mohann1006.workers.dev)"; // 예: "https://honorsville-webhook.본인계정.workers.dev"
 
 function getDecodedEndpoint(parts) {
   try {
