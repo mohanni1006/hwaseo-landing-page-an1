@@ -80,17 +80,29 @@ function closePopup() {
   }
 }
 
-// 6. 페이지 로드 초기화 (과거 날짜 선택 제한 포함)
+// 6. 페이지 로드 초기화 (과거 날짜 선택 제한 & 칸 전체 클릭 시 달력 열기)
 window.addEventListener('DOMContentLoaded', function() {
   openPopup();
   showSlide(0);
   startSlideInterval();
 
-  // 방문 예약 일자: 오늘 이전 과거 날짜 비활성화
+  // 방문 예약 일자 설정
   const dateInput = document.getElementById('formVisitDate');
   if (dateInput) {
+    // 오늘 이전 과거 날짜 선택 비활성화
     const today = new Date().toISOString().split('T')[0];
     dateInput.min = today;
+
+    // 칸 자체 어디든 클릭/터치 시 달력 창(Picker) 즉시 열기
+    dateInput.addEventListener('click', function() {
+      if (typeof this.showPicker === 'function') {
+        try {
+          this.showPicker();
+        } catch (e) {
+          // 브라우저 포커스 정책 예외 안전 처리
+        }
+      }
+    });
   }
 });
 
