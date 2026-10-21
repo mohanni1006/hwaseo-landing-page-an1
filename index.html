@@ -107,19 +107,10 @@
     </div>
   </header>
 
-  <!-- 최상단 공식 홍보 영상 섹션 (유튜브 자동 재생) -->
+  <!-- 최상단 대표 이미지 namecard.png (팝업을 끄면 나타나는 메인 상단 화면) -->
   <section class="top-visual-banner" id="top-visual">
     <div class="top-visual-inner">
-      <div class="video-container">
-        <iframe 
-          src="https://www.youtube.com/embed/RyQxWm-hc60?autoplay=1&mute=1&loop=1&playlist=RyQxWm-hc60&playsinline=1&controls=1&rel=0" 
-          title="화서역 호수공원 아너스빌 공식 홍보 영상" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          referrerpolicy="strict-origin-when-cross-origin" 
-          allowfullscreen>
-        </iframe>
-      </div>
+      <img src="namecard.png" alt="화서역 호수공원 아너스빌 최상단 대표 이미지" class="main-top-img">
     </div>
   </section>
 
@@ -566,12 +557,32 @@
     </div>
   </div>
 
-  <!-- Special Benefit Popup Modal -->
+  <!-- [1차 팝업 모달] Special Benefit Popup Modal -->
   <div class="popup-overlay" id="popupModal">
     <div class="popup-box">
       <img src="popup.png" alt="화서역 호수공원 아너스빌 중도금 무이자 입주까지 계약금 2천만원">
       <div class="popup-actions">
         <button type="button" class="btn-popup-close" onclick="closePopup()">닫기</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- [2차 팝업 모달] YouTube Video Popup Modal -->
+  <div class="popup-overlay" id="videoPopupModal" style="display: none;">
+    <div class="popup-box video-popup-box">
+      <div class="popup-video-wrap">
+        <iframe 
+          id="popupYoutubeIframe"
+          src="" 
+          title="화서역 호수공원 아너스빌 공식 홍보 영상" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="popup-actions">
+        <button type="button" class="btn-popup-close" onclick="closeVideoPopup()">닫기</button>
       </div>
     </div>
   </div>
